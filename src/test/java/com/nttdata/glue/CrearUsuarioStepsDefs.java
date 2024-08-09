@@ -27,4 +27,14 @@ public class CrearUsuarioStepsDefs {
     public void laRespuestaDelBodyTieneQueTenerLosDatosY(int id, int petId , int quantity , String shipDate , String status ,  int complete) {
         crearUsuario.validarCuerpoRespuesta(id,petId,quantity,shipDate,status,complete);
     }
+
+    @When("^hago la creacion del pedido con los datos id (.*) , petId (.*) , quantity (.*) , shipDate (.*), status (.*), y complete (.*)$")
+    public void hagoLaCreacionDelPedidoConLosDatosIdPetIdQuantityShipDateStatusYComplete(int id, int petId , int quantity , String shipDate , String status ,  boolean complete) {
+        crearUsuario.crearpedido2(id,petId,quantity,shipDate,status,complete);
+    }
+
+    @And("^la respuesta del body tiene que tener los datos (.*),(.*),(.*),(.*),(.*),(.*)$")
+    public void laRespuestaDelBodyTieneQueTenerLosDatosIdPetIdQuantityStatusComplete(int id, int petId , int quantity , String shipDate , String status ,  boolean complete) {
+        crearUsuario.validarCuerpoRespuesta2(id,petId,quantity,shipDate,status,complete);
+    }
 }

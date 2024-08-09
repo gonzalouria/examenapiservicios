@@ -35,6 +35,7 @@ public class ArticuloStep {
     }
 
     public void codigostatus(int status) {
+
         SerenityRest.restAssuredThat(response -> response.statusCode(status));
     }
     public void idrespuesta(int id) {
